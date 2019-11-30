@@ -63,7 +63,9 @@ if (_return) then {
     } forEach _items;
 
     {
-        _weaponHolder addMagazineAmmoCargo [_x select 0, 1, _x select 1];
+        if(count _x >= 2) then {
+            _weaponHolder addMagazineAmmoCargo [_x select 0, 1, _x select 1];
+        };
     } forEach _magazines;
 };
 
